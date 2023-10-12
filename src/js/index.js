@@ -1,22 +1,17 @@
-const books = [];
+let books = [];
 const RENDER_EVENT = 'render-books';
 const STORAGE_KEY = 'bookshelf';
 const SAVED_DATA = 'save-books';
+import * as helper from './helper.js';
+import * as handler from './handler.js';
 
-document.getElementById('form').addEventListener('submit', (event) => {
-    event.preventDefault();
-    const title = document.getElementById('inputTitle').value;
-    const author = document.getElementById('inputName').value;
-    const year = document.getElementById('inputYear').value;
-    const booksData = generateBooksObject(title, author, year);
-
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(booksData));
+// Event Listener
+document.getElementById('read').addEventListener('click', () => {
+    document.getElementById('dropdownDefaultButton').innerHTML = 'Sudah dibaca';
+    handler.getReadBooks(books);
 })
 
-const generateBooksObject = (title, author, year) => {
-    return {
-        title,
-        author,
-        year
-    }
-}
+document.getElementById('unread').addEventListener('click', () => {
+    document.getElementById('dropdownDefaultButton').innerHTML = 'Belum dibaca';
+    handler.getUnreadBooks(books);
+})
