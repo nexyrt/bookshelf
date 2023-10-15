@@ -1616,10 +1616,6 @@ input:checked + .toggle-bg {
   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
 }
 
-.to-emerald-600 {
-  --tw-gradient-to: #059669 var(--tw-gradient-to-position);
-}
-
 .to-blue-600 {
   --tw-gradient-to: #1C64F2 var(--tw-gradient-to-position);
 }
