@@ -17,6 +17,8 @@ export const getReadBooks = (books) => {
     books = books.filter(book => book.isComplete === true)
 
     if(books.length == 0) {
+        const cardsContainer = document.querySelector('#cards-container');
+        cardsContainer.innerHTML = '';
         return
     }
     dataTitle.innerText = `${books.length} book you've read!`
@@ -30,6 +32,8 @@ export const getUnreadBooks = (books) => {
     books = books.filter(book => book.isComplete === false)
 
     if(books.length == 0) {
+        const cardsContainer = document.querySelector('#cards-container');
+        cardsContainer.innerHTML = '';
         return
     }
     dataTitle.innerText = `${books.length} book you haven't read!`
